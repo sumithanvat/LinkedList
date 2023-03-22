@@ -2,13 +2,15 @@ public class LinkedList {
     Node head;
 
     public LinkedList() {
+
         this.head = null;
     }
 
-    public void addNode(int data) {
+    public void append(int data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
+            return;
         } else {
             Node current = head;
             while (current.next != null) {
