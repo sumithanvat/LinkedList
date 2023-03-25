@@ -39,4 +39,34 @@ public class LinkedList {
         newNode.next = node.next;
         node.next = newNode;
     }
+
+    public boolean delete(int key) {
+        Node current = head;
+        Node previous = null;
+
+        while (current != null) {
+            if (current.data == key) {
+                if (previous == null) {
+                    head = current.next;
+                } else {
+                    previous.next = current.next;
+                }
+                return true;
+            }
+            previous = current;
+            current = current.next;
+        }
+
+        return false;
+    }
+
+    public int size() {
+        int count = 0;
+        Node current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
 }
