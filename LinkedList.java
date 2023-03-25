@@ -29,4 +29,14 @@ public class LinkedList {
         }
         return null;
     }
+
+    public void insertAfter(Node node, int data) {
+        if (node == null) {
+            return;
+        }
+
+        Node newNode = new Node(data);
+        newNode.next = node.next;
+        node.next = newNode;
+    }
 }

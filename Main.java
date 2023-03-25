@@ -9,9 +9,14 @@ public class Main {
         Node node = list.search(30);
 
         if (node != null) {
-            System.out.println("Found node with data: " + node.data);
-        } else {
-            System.out.println("Node not found.");
+            list.insertAfter(node, 40);
         }
+
+        Node current = list.head;
+        while (current != null) {
+            System.out.print(current.data + "->");
+            current = current.next;
+        }
+        System.out.println("null");
     }
 }
