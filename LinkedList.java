@@ -20,10 +20,19 @@ public class LinkedList {
         }
     }
 
-    public int pop() {
-        int poppedData = head.data;
-        head = head.next;
+    public int popLast() {
+        Node current = head;
+        Node prev = null;
+        while (current.next != null) {
+            prev = current;
+            current = current.next;
+        }
+        int poppedData = current.data;
+        if (prev == null) {
+            head = null;
+        } else {
+            prev.next = null;
+        }
         return poppedData;
     }
 }
-

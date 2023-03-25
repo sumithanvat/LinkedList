@@ -7,8 +7,8 @@ public class Main {
         list.head.next = new Node(30);
         list.head.next.next = new Node(70);
 
-        // Delete the first element (i.e., the head) of the list
-        int poppedData = list.pop();
+        // Delete the last element of the list
+        int poppedData = list.popLast();
 
         // Print the popped data and the final sequence of the linked list
         System.out.println("Popped data: " + poppedData);
