@@ -4,12 +4,14 @@ public class Main {
         // Create the linked list
         LinkedList list = new LinkedList();
         list.head = new Node(56);
-        list.head.next = new Node(70);
+        list.head.next = new Node(30);
+        list.head.next.next = new Node(70);
 
-        // Insert the node with data 30 between nodes with data 56 and 70
-        list.insertAfter(56, 30);
+        // Delete the first element (i.e., the head) of the list
+        int poppedData = list.pop();
 
-        // Print the final sequence of the linked list
+        // Print the popped data and the final sequence of the linked list
+        System.out.println("Popped data: " + poppedData);
         Node current = list.head;
         while (current != null) {
             System.out.print(current.data + "->");

@@ -19,5 +19,11 @@ public class LinkedList {
             current = current.next;
         }
     }
+
+    public int pop() {
+        int poppedData = head.data;
+        head = head.next;
+        return poppedData;
+    }
 }
 
