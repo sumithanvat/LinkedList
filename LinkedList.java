@@ -2,37 +2,31 @@ public class LinkedList {
     Node head;
 
 
-
     public LinkedList() {
         this.head = null;
     }
 
-    public void insertAfter(int key, int data) {
+    public void insert(int data) {
         Node newNode = new Node(data);
-        Node current = head;
-        while (current != null) {
-            if (current.data == key) {
-                newNode.next = current.next;
-                current.next = newNode;
-                break;
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
             }
-            current = current.next;
+            current.next = newNode;
         }
     }
 
-    public int popLast() {
+    public Node search(int key) {
         Node current = head;
-        Node prev = null;
-        while (current.next != null) {
-            prev = current;
+        while (current != null) {
+            if (current.data == key) {
+                return current;
+            }
             current = current.next;
         }
-        int poppedData = current.data;
-        if (prev == null) {
-            head = null;
-        } else {
-            prev.next = null;
-        }
-        return poppedData;
+        return null;
     }
 }

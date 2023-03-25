@@ -1,22 +1,17 @@
 
 public class Main {
     public static void main(String[] args) {
-        // Create the linked list
         LinkedList list = new LinkedList();
-        list.head = new Node(56);
-        list.head.next = new Node(30);
-        list.head.next.next = new Node(70);
+        list.insert(56);
+        list.insert(30);
+        list.insert(70);
 
-        // Delete the last element of the list
-        int poppedData = list.popLast();
+        Node node = list.search(30);
 
-        // Print the popped data and the final sequence of the linked list
-        System.out.println("Popped data: " + poppedData);
-        Node current = list.head;
-        while (current != null) {
-            System.out.print(current.data + "->");
-            current = current.next;
+        if (node != null) {
+            System.out.println("Found node with data: " + node.data);
+        } else {
+            System.out.println("Node not found.");
         }
-        System.out.print("null");
     }
 }
